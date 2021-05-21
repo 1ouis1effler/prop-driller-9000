@@ -1,12 +1,15 @@
 import React from 'react';
 
-function Transformer() {
+function Transformer(props) {
 
+  const displayTransformer = () => {
+    console.log(props.proptimii)
+  }
   return (
     <img
       className = 'transformer'
-      src = {}
-      alt = {}
+      src = {props.proptimus.url}
+      alt = {props.proptimus.name}
     />
   );
 }

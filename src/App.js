@@ -1,5 +1,5 @@
 import React from 'react';
-
+import TransformersSection from './Containers/TransformersSection'
 import './App.css';
 
 import Header from './Components/Header';
@@ -22,13 +22,27 @@ export default class App extends React.Component {
         name: 'omega',
         url: 'http://pngimg.com/uploads/transformers/transformers_PNG3.png'
       }
-    ]
+    ],
+    display: false
+  }
+
+  setDisplay = () => {
+    this.setState({
+      display: !this.state.display,
+    })
   }
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header 
+        proptimusLogo={this.state.proptimusLogo} 
+        setDisplay={this.setDisplay}
+        />
+        <TransformersSection 
+        proptimii={this.state.proptimii} 
+        display={this.state.display}
+        />
       </div>
     );
   }
